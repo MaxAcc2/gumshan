@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gum Shan (Gold Mountain) | A Short Film</title>
+<meta name="description" content="A Chinese immigrant arrives in 1870s California in search of gold to save his ailing daughter, only to face violent racism and expulsion. Through ingenuity and sacrifice, he finds a way to keep his promise.">
+<meta name="theme-color" content="#0B0A08">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://gumshan.com/">
+
+<meta property="og:type" content="video.movie">
+<meta property="og:title" content="Gum Shan (Gold Mountain)">
+<meta property="og:description" content="A Chinese immigrant arrives in 1870s California in search of gold to save his ailing daughter, only to face violent racism and expulsion. Through ingenuity and sacrifice, he finds a way to keep his promise.">
+<meta property="og:url" content="https://gumshan.com/">
+<meta property="og:image" content="https://gumshan.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gum Shan (Gold Mountain)">
+<meta name="twitter:description" content="A short film. 19:26. 2026.">
+<meta name="twitter:image" content="https://gumshan.com/assets/og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0B0A08;
+    --bg2:#121009;
+    --ink:#EDE6D6;
+    --ink-bright:#F7F2E7;
+    --mute:#9A9283;
+    --mute2:#6E6759;
+    --gold:#C9A24A;
+    --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;background:var(--bg)}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,video{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  section{position:relative}
+
+  /* film grain */
+  body::after{
+    content:"";position:fixed;inset:-50%;pointer-events:none;z-index:50;opacity:.045;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size:240px 240px;
+    animation:grain 1.2s steps(6) infinite;
+  }
+  @keyframes grain{
+    0%{transform:translate(0,0)}20%{transform:translate(-2%,1%)}40%{transform:translate(1%,-2%)}
+    60%{transform:translate(-1%,2%)}80%{transform:translate(2%,-1%)}100%{transform:translate(0,0)}
+  }
+
+  /* HERO */
+  .hero{
+    height:100svh;min-height:560px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    overflow:hidden;isolation:isolate;
+  }
+  .hero .bg,.hero .bg img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;
+    z-index:-2;transform-origin:center;
+    animation:kb 36s ease-out forwards;
+  }
+  @keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(to bottom,rgba(11,10,8,.62) 0%,rgba(11,10,8,.3) 18%,rgba(11,10,8,0) 38%),
+      linear-gradient(to top,rgba(11,10,8,1) 0%,rgba(11,10,8,.7) 10%,rgba(11,10,8,.2) 28%,rgba(11,10,8,0) 42%),
+      radial-gradient(ellipse at 50% 55%,transparent 55%,rgba(11,10,8,.3) 100%);
+  }
+  .hero-top{
+    position:relative;width:100%;text-align:center;
+    padding:clamp(3rem,9vh,6.5rem) clamp(1.5rem,6vw,6rem) 0;
+  }
+  .hero-bottom{
+    position:relative;width:100%;text-align:center;
+    padding:0 clamp(1.5rem,6vw,6rem) clamp(3.5rem,8vh,5.5rem);
+  }
+  .title{margin:0 auto;width:min(72vw,680px)}
+  .title img{width:100%;height:auto;filter:drop-shadow(0 4px 30px rgba(0,0,0,.7))}
+  .rule{
+    width:64px;height:1px;background:var(--gold);opacity:.85;
+    margin:clamp(1.2rem,2.6vh,1.8rem) auto 0;
+  }
+  .spec{
+    margin-top:clamp(.9rem,2vh,1.4rem);text-shadow:0 1px 12px rgba(0,0,0,.8);
+    font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--mute);
+  }
+  .spec span{margin:0 .35em}
+  /* Laurels: uncomment and drop SVG/PNG laurels in when selections land.
+  .laurels{display:flex;gap:2rem;justify-content:center;margin-top:2rem;opacity:.9}
+  .laurels img{height:64px;width:auto}
+  */
+  .scroll-cue{
+    position:absolute;left:50%;bottom:1.25rem;transform:translateX(-50%);
+    width:1px;height:38px;background:linear-gradient(var(--gold),transparent);opacity:.6;
+    animation:cue 2.4s ease-in-out infinite;
+  }
+  @keyframes cue{0%,100%{opacity:.15;transform:translate(-50%,0)}50%{opacity:.7;transform:translate(-50%,8px)}}
+
+  /* shared section layout */
+  .wrap{max-width:1180px;margin:0 auto;padding:clamp(5rem,12vh,9rem) clamp(1.5rem,6vw,4rem)}
+  .label{
+    font-size:.68rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);
+    text-align:center;margin-bottom:clamp(1.6rem,4vh,2.6rem);opacity:.9;
+  }
+
+  /* TRAILER */
+  .trailer{background:var(--bg)}
+  .player{
+    position:relative;width:100%;aspect-ratio:2.39/1;
+    background:#000;overflow:hidden;
+    box-shadow:0 40px 120px -30px rgba(0,0,0,.9),0 0 0 1px rgba(201,162,74,.12);
+  }
+  .player video{width:100%;height:100%;object-fit:contain;background:#000}
+  .play{
+    position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;
+    background:radial-gradient(ellipse at center,rgba(0,0,0,.15),rgba(0,0,0,.55));
+    display:grid;place-items:center;color:var(--ink-bright);
+    transition:opacity .5s ease,visibility .5s;
+  }
+  .play-ring{
+    width:clamp(64px,8vw,96px);height:clamp(64px,8vw,96px);border-radius:50%;
+    border:1px solid var(--gold);display:grid;place-items:center;
+    background:rgba(11,10,8,.45);box-shadow:0 4px 30px rgba(0,0,0,.5);
+    transition:transform .35s ease,background .35s ease;
+  }
+  .play:hover .play-ring{transform:scale(1.06);background:rgba(201,162,74,.14)}
+  .play-ring svg{width:34%;height:34%;margin-left:6%;fill:var(--ink-bright)}
+  .play-word{
+    position:absolute;bottom:clamp(1rem,3vw,2rem);left:0;right:0;text-align:center;
+    font-size:.68rem;letter-spacing:.36em;text-transform:uppercase;color:var(--ink);
+    text-shadow:0 1px 10px rgba(0,0,0,.9);
+  }
+  .player.is-playing .play{opacity:0;visibility:hidden;pointer-events:none}
+  /* custom controls: no browser chrome, no gradient */
+  .player video::-webkit-media-controls{display:none!important}
+  .ctl{
+    position:absolute;left:0;right:0;bottom:0;padding:0 clamp(.75rem,2vw,1.5rem) clamp(.6rem,1.6vw,1.1rem);
+    display:flex;align-items:center;gap:clamp(.6rem,1.5vw,1rem);
+    opacity:0;transition:opacity .4s ease;pointer-events:none;
+  }
+  .player.is-playing:hover .ctl,.player.is-playing.show-ctl .ctl,.player.is-playing.paused .ctl{opacity:1;pointer-events:auto}
+  .ctl button{
+    background:none;border:0;cursor:pointer;color:var(--ink-bright);padding:.35rem;line-height:0;
+    filter:drop-shadow(0 1px 6px rgba(0,0,0,.9));opacity:.85;transition:opacity .2s;
+  }
+  .ctl button:hover{opacity:1}
+  .ctl svg{width:18px;height:18px;fill:currentColor}
+  .ctl .ico-alt{display:none}
+  .player.paused .ico-pause{display:none}
+  .player.paused .ico-play-sm{display:inline}
+  .player.muted .ico-vol{display:none}
+  .player.muted .ico-mute{display:inline}
+  .seek{
+    flex:1;position:relative;height:18px;cursor:pointer;
+  }
+  .seek::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(237,230,214,.35);transform:translateY(-.5px)}
+  .seek .fill{position:absolute;left:0;top:50%;height:1px;width:0;background:var(--gold);transform:translateY(-.5px);box-shadow:0 0 6px rgba(201,162,74,.6)}
+  .time{font-size:.66rem;letter-spacing:.12em;color:var(--ink);font-variant-numeric:tabular-nums;text-shadow:0 1px 6px rgba(0,0,0,.9);min-width:5.5em;text-align:right}
+  .player.is-playing:not(.paused){cursor:none}
+  .player.is-playing:not(.paused):hover{cursor:default}
+
+  /* STORY */
+  .story{background:var(--bg2)}
+  .logline{
+    font-family:var(--serif);font-weight:300;
+    font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.42;
+    max-width:32em;margin:0 auto;text-align:center;color:var(--ink);
+  }
+  .strip{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
+    margin-top:clamp(3.5rem,8vh,5.5rem);
+  }
+  .strip figure{aspect-ratio:2.39/1;overflow:hidden;background:#000}
+  .strip img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.02);transition:transform 1.4s ease}
+  .strip figure:hover img{transform:scale(1.03)}
+
+  /* CREDITS */
+  .credits{background:var(--bg)}
+  .credit-list{max-width:640px;margin:0 auto;text-align:center}
+  .credit{margin-bottom:clamp(1.5rem,3.6vh,2.4rem)}
+  .role{
+    font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--mute2);
+    margin-bottom:.45rem;
+  }
+  .names{
+    font-family:var(--sans);font-weight:300;
+    font-size:clamp(.95rem,1.5vw,1.15rem);letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ink-bright);line-height:1.5;
+  }
+  .prod{
+    margin:clamp(3rem,7vh,4.5rem) auto 0;max-width:40em;text-align:center;
+    font-size:.8rem;line-height:1.9;letter-spacing:.04em;color:var(--mute);
+  }
+  .prod p+p{margin-top:1rem}
+  .prod .ai{color:var(--mute2)}
+
+  /* FOOTER */
+  footer{
+    border-top:1px solid rgba(201,162,74,.14);
+    padding:clamp(2.5rem,6vh,4rem) clamp(1.5rem,6vw,4rem);
+    text-align:center;
+  }
+  .ig{
+    display:inline-block;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--ink);padding-bottom:.3rem;border-bottom:1px solid transparent;
+    transition:color .3s,border-color .3s;
+  }
+  .ig:hover{color:var(--gold);border-color:var(--gold)}
+  .contact{margin-bottom:1.4rem;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase}
+  .contact-label{color:var(--mute2);margin-right:1.2em}
+  .contact a{color:var(--ink);padding-bottom:.3rem;border-bottom:1px solid transparent;transition:color .3s,border-color .3s;letter-spacing:.18em;text-transform:none}
+  .contact a:hover{color:var(--gold);border-color:var(--gold)}
+  .copy{margin-top:0;font-size:.68rem;letter-spacing:.06em;color:var(--mute2)}
+  .mark{
+    font-family:var(--serif);font-size:1.1rem;letter-spacing:.34em;text-indent:.34em;
+    color:var(--mute);margin-bottom:1.4rem;
+  }
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:720px){
+    .strip{grid-template-columns:1fr 1fr}
+    .strip figure:nth-child(3){display:none}
+    .player{aspect-ratio:16/9}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .hero .bg img,body::after,.scroll-cue{animation:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .strip img,.play-ring{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <picture class="bg">
+    <img src="assets/hero.jpg" alt="A man runs down a burning street of wooden buildings at night, flames on both sides." fetchpriority="high">
+  </picture>
+  <div class="hero-top">
+    <h1 class="title"><img src="assets/title.png" alt="Gum Shan" fetchpriority="high"></h1>
+    <p class="spec">A short film<span>·</span>2026</p>
+  </div>
+  <div class="hero-bottom">
+    <!--
+    <div class="laurels">
+      <img src="assets/laurel-1.svg" alt="Official Selection">
+    </div>
+    -->
+  </div>
+</header>
+
+<main>
+
+  <section class="trailer" id="trailer">
+    <div class="wrap reveal">
+      <p class="label">Trailer</p>
+      <div class="player" id="player">
+        <video id="video" preload="metadata" playsinline poster="assets/trailer-poster.jpg">
+          <source src="https://ixm-media.s3.amazonaws.com/gum-shan-trailer.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button class="play" id="playBtn" aria-label="Play trailer">
+          <span class="play-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z"/></svg></span>
+          <span class="play-word">Play trailer</span>
+        </button>
+        <div class="ctl" id="ctl">
+          <button id="ppBtn" aria-label="Play or pause">
+            <svg class="ico-pause" viewBox="0 0 24 24"><path d="M7 4h4v16H7zM13 4h4v16h-4z"/></svg>
+            <svg class="ico-alt ico-play-sm" viewBox="0 0 24 24"><path d="M6 3.5v17l14-8.5z"/></svg>
+          </button>
+          <div class="seek" id="seek" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><div class="fill" id="fill"></div></div>
+          <span class="time" id="time">0:00 / 0:00</span>
+          <button id="muteBtn" aria-label="Mute or unmute">
+            <svg class="ico-vol" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+            <svg class="ico-alt ico-mute" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9zm13.6 3 2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4z"/></svg>
+          </button>
+          <button id="fsBtn" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="wrap reveal">
+      <p class="label">The Story</p>
+      <p class="logline">A Chinese immigrant arrives in 1870s California in search of gold to save his ailing daughter, only to face violent racism and expulsion. Through ingenuity and sacrifice, he finds a way to keep his promise.</p>
+      <div class="strip">
+        <figure>
+          <picture>
+            <source srcset="assets/still-1.webp" type="image/webp">
+            <img src="assets/still-1.jpg" alt="A river town at sunset with a paddle steamer at the dock and tall ships on the water." loading="lazy">
+          </picture>
+        </figure>
+        <figure>
+          <picture>
+            <source srcset="assets/still-2.webp" type="image/webp">
+            <img src="assets/still-2.jpg" alt="A young girl with braided hair looks up at her father." loading="lazy">
+          </picture>
+        </figure>
+        <figure>
+          <picture>
+            <source srcset="assets/still-3.webp" type="image/webp">
+            <img src="assets/still-3.jpg" alt="A man's face in cold grey light, looking upward." loading="lazy">
+          </picture>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="credits" id="credits">
+    <div class="wrap reveal">
+      <p class="label">Credits</p>
+      <div class="credit-list">
+        <div class="credit"><p class="role">Directed by</p><p class="names">Max Acchione</p></div>
+        <div class="credit"><p class="role">Written by</p><p class="names">Cheryl Tsai Perez</p></div>
+        <div class="credit"><p class="role">Produced by</p><p class="names">Max Acchione<br>Ryan Mahar<br>Matt Handy<br>Reham Gharib</p></div>
+        <div class="credit"><p class="role">Executive Producers</p><p class="names">Mohannad Malas<br>Errol Arkilic</p></div>
+        <div class="credit"><p class="role">Associate Producer</p><p class="names">Sami Alsabawi</p></div>
+        <div class="credit"><p class="role">Music by</p><p class="names">Alvin Donato</p></div>
+      </div>
+      <div class="prod">
+        <p>UC Irvine Beall Applied Innovation presents, in association with Malas Entertainment and Open Screenplay, a Story and Light production.</p>
+        <p class="ai">Made with generative AI under continuous human direction. Human-written script, human edit, hand-composed score.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <!-- <a class="ig" href="https://www.instagram.com/gumshanfilm" target="_blank" rel="noopener">Instagram @gumshanfilm</a> -->
+  <p class="contact"><span class="contact-label">Contact</span><a id="mail" href="#" data-u="info" data-d="gumshan.com" rel="nofollow"></a></p>
+  <p class="copy">© 2026 The Regents of the University of California. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // Trailer: HTML5 video with a small custom control bar (no browser chrome, no gradient).
+  // To swap the trailer, change the <source src> on the video element above.
+  (function(){
+    var player=document.getElementById('player'),video=document.getElementById('video');
+    var btn=document.getElementById('playBtn'),pp=document.getElementById('ppBtn');
+    var seek=document.getElementById('seek'),fill=document.getElementById('fill'),time=document.getElementById('time');
+    var mute=document.getElementById('muteBtn'),fs=document.getElementById('fsBtn');
+    var hideTimer;
+    function fmt(t){t=Math.max(0,t|0);return Math.floor(t/60)+':'+('0'+t%60).slice(-2);}
+    function poke(){player.classList.add('show-ctl');clearTimeout(hideTimer);hideTimer=setTimeout(function(){player.classList.remove('show-ctl')},2200);}
+    function toggle(){video.paused?video.play():video.pause();}
+    btn.addEventListener('click',function(){player.classList.add('is-playing');var p=video.play();if(p&&p.catch)p.catch(function(){player.classList.remove('is-playing')});});
+    pp.addEventListener('click',function(e){e.stopPropagation();toggle();});
+    video.addEventListener('click',function(){if(player.classList.contains('is-playing'))toggle();});
+    video.addEventListener('play',function(){player.classList.add('is-playing');player.classList.remove('paused');poke();});
+    video.addEventListener('pause',function(){player.classList.add('paused');});
+    video.addEventListener('ended',function(){player.classList.remove('is-playing','paused');video.currentTime=0;});
+    video.addEventListener('timeupdate',function(){
+      if(!video.duration)return;var pct=video.currentTime/video.duration*100;
+      fill.style.width=pct+'%';seek.setAttribute('aria-valuenow',Math.round(pct));
+      time.textContent=fmt(video.currentTime)+' / '+fmt(video.duration);
+    });
+    video.addEventListener('loadedmetadata',function(){time.textContent='0:00 / '+fmt(video.duration);});
+    function seekTo(e){var r=seek.getBoundingClientRect();var x=(e.touches?e.touches[0].clientX:e.clientX)-r.left;video.currentTime=Math.min(Math.max(x/r.width,0),1)*video.duration;}
+    seek.addEventListener('click',function(e){e.stopPropagation();seekTo(e);});
+    seek.addEventListener('keydown',function(e){if(e.key==='ArrowRight')video.currentTime+=5;if(e.key==='ArrowLeft')video.currentTime-=5;});
+    mute.addEventListener('click',function(e){e.stopPropagation();video.muted=!video.muted;player.classList.toggle('muted',video.muted);});
+    fs.addEventListener('click',function(e){e.stopPropagation();
+      var el=player;
+      if(document.fullscreenElement){document.exitFullscreen();}
+      else if(el.requestFullscreen){el.requestFullscreen();}
+      else if(video.webkitEnterFullscreen){video.webkitEnterFullscreen();}
+    });
+    player.addEventListener('mousemove',poke);
+    player.addEventListener('touchstart',poke,{passive:true});
+    document.addEventListener('keydown',function(e){
+      if(!player.classList.contains('is-playing'))return;
+      if(e.key===' '&&document.activeElement.tagName!=='BUTTON'){e.preventDefault();toggle();}
+    });
+  })();
+
+  // Contact address is assembled at load so plain-HTML scrapers never see it whole.
+  (function(){
+    var a=document.getElementById('mail');if(!a)return;
+    var addr=a.getAttribute('data-u')+'@'+a.getAttribute('data-d');
+    a.textContent=addr;a.href='mailto:'+addr;
+  })();
+
+  // Reveal on scroll, once.
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>
