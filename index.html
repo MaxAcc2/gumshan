@@ -102,10 +102,10 @@
     font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--mute);
   }
   .spec span{margin:0 .35em}
-  /* Laurels: uncomment and drop SVG/PNG laurels in when selections land.
-  .laurels{display:flex;gap:2rem;justify-content:center;margin-top:2rem;opacity:.9}
-  .laurels img{height:64px;width:auto}
-  */
+  /* Laurels: add an <img> per selection; height is normalised, order is chronological. */
+  .laurels{display:flex;flex-wrap:wrap;gap:clamp(1.5rem,4vw,3.5rem);justify-content:center;align-items:center;
+    opacity:.92;filter:drop-shadow(0 2px 14px rgba(0,0,0,.8))}
+  .laurels img{height:clamp(72px,9vh,110px);width:auto}
   .scroll-cue{
     position:absolute;left:50%;bottom:1.25rem;transform:translateX(-50%);
     width:1px;height:38px;background:linear-gradient(var(--gold),transparent);opacity:.6;
@@ -261,11 +261,10 @@
     <p class="spec">A short film<span>·</span>2026</p>
   </div>
   <div class="hero-bottom">
-    <!--
     <div class="laurels">
-      <img src="assets/laurel-1.svg" alt="Official Selection">
+      <img src="assets/laurel-neuwave.png" alt="Official Selection, Neu Wave AI Film Festival">
+      <img src="assets/laurel-alexandria.png" alt="Official Selection, Alexandria Film Festival 2026">
     </div>
-    -->
   </div>
 </header>
 
